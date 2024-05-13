@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button</title>
+    <link rel="stylesheet" href="./button.css">
+</head>
+
+<body>
+    <div class="all">
+        <header>
+            <div class="navber">
+                <img src="logo.png" alt="image">
+                <div class="hamburger" id="hamburger-click-containerrr">
+                    <ul>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./navber.html">Navber</a></li>
+                        <li><a href="./button.html">Button</a></li>
+                        <li><a href="./card.html">Card</a></li>
+                        <li><a href="./footer.html">Footer</a></li>
+                    </ul>
+                </div>
+                <div class="containerrr">
+                    <div class="humbergar">
+                        <div class="menu"></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- <h1 class="heading">Button Generator</h1> -->
+        <div class="container" id="bgBlur">
+            <div id="input-html">
+                <div class="input-cont">
+                    <label for="nameBtn">Button Name</label>
+                    <input type="text" id="nameBtn" value="Button">
+                </div>
+                <div class="input-cont">
+                    <label for="colorBtn">Font color</label>
+                    <input type="color" id="colorBtn" value="#ffffff">
+                </div>
+                <div class="input-cont">
+                    <label for="BGColorBtn">Background Color</label>
+                    <input type="color" id="BGColorBtn" value="#6e66ff">
+
+                </div>
+                <div class="input-cont">
+                    <label for="heightBtn">Height</label>
+                    <input type="number" id="heightBtn" value="50">
+                </div>
+                <div class="input-cont">
+                    <label for="widthBtn">Width</label>
+                    <input type="number" id="widthBtn" value="130">
+                </div>
+                <div class="input-cont">
+                    <label for="BorderRadiousBtn">Border Radious</label>
+                    <input type="number" id="BorderRadiousBtn" value="25">
+                </div>
+                <div class="input-cont">
+                    <label for="BorderSizeBtn">Border</label>
+                    <!-- <input type="text" id="BorderSizeBtn" value="1px solid black"> -->
+                    <div class="border-con">
+                        <select id="BorderSizeBtn">
+                            <option value="1px solid">1</option>
+                            <option value="2px solid">2</option>
+                            <option value="3px solid">3</option>
+                            <option value="4px solid">4</option>
+                            <option value="5px solid">5</option>
+                            <option value="1px dotted">1 border dotted</option>
+                            <option value="2px dotted">2 border dotted</option>
+                            <option value="3x dotted">3 border dotted</option>
+                            <option value="4px dotted">4 border dotted</option>
+                            <option value="5px dotted">5 border dotted</option>
+                        </select>
+                        <input type="color" value="#5900ff" id="BorderSizeBtnColor">
+                    </div>
+                </div>
+                <div class="input-cont">
+                    <label for="fontSizeBtn">Font Size</label>
+                    <input type="number" id="fontSizeBtn" value="19">
+                </div>
+                <div class="input-cont">
+                    <label for="SizeBtn">Padding</label>
+                    <input type="number" id="SizeBtn" value="10">
+                </div>
+                <div class="input-cont">
+                    <label for="fontWeighBtn">Font Weight</label>
+                    <select id="fontWeighBtn">
+                        <option value="300">Average</option>
+                        <option value="600" selected>Small</option>
+                        <option value="700">Medium</option>
+                        <option value="800">Large</option>
+                    </select>
+                </div>
+                <div style="margin-top: 13px; margin-left: 14px;" class="hovclass">
+                    <label for="btnHover">Hover Background Color</label>
+                    <input type="color" id="btnHover" value="#543dff"></input>
+                </div>
+                <div style="margin-top: 13px; margin-left: 14px;" class="hovclass">
+                    <label for="btnHover">Hover Font Color</label>
+                    <input type="color" id="btnFontHover" value="#000000"></input>
+                </div>
+                <div>
+                    <label for="cursorPointer"></label>
+                    <option value="pointer" id="cursorPointer"></option>
+                </div>
+
+            </div>
+            <!-- Show Your Generate Button jo live banaya hai -->
+
+            <div class="showButtonContainer">
+                <div id="showBtn">
+                    <button id="create-Button" class="buttn">Button</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- BackGround blur Or Code Hide karne ke liye  -->
+    <div id="genCode">
+        <button onclick="popup()"> Generate Code</button>
+    </div>
+
+    <div id="Code-Container">
+        <!-- HTML code -->
+        <div class="show-Html-code" style="margin-bottom: 20px;">
+            <h4 style=" margin-bottom: 12px;">Your <span style="color: #5900ff; font-style: italic;">HTML</span> Code
+            </h4>
+            <pre id="YourHtmlCode"></pre>
+            <button onclick="copyCodeHtml()" id="Htmlcopiedsucced">Copy HTML Code</button>
+        </div>
+        <!-- CSS Code -->
+        <div class="show-css-code">
+            <h4 style=" margin-bottom: 12px;">Your <span style="color: #ff00aa; font-style: italic;">CSS</span> Code
+            </h4>
+            <pre id="YourCssCode"></pre>
+            <button onclick="copyCode()" id="copiedsucc">Copy CSS Code</button>
+        </div>
+
+        <!-- Code Hide Or Blur hatane ke liye -->
+        <div class="CloseCode">
+            <button onclick="popup()">Close</button>
+        </div>
+
+    </div>
+    <script src="button.js"></script>
+
+</body>
+
+</html>

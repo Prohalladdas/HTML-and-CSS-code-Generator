@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card</title>
+    <link rel="stylesheet" href="./card.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Teachers:ital,wght@0,400..800;1,400..800&display=swap');
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            height: 70px;
+            width: 100%;
+            background-color: #605cb6;
+            font-family: "Teachers", sans-serif;
+            box-shadow: 1px 3px 10px -8px;
+            position: fixed;
+            z-index: 2;
+
+        }
+
+        .navber {
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navber ul {
+            display: flex;
+            list-style: none;
+            padding: 0px 11px 0px 0px;
+        }
+
+        .navber ul a {
+            text-decoration: none;
+            padding: 16px 18px;
+            font-size: 20px;
+            color: #ffffff;
+            font-weight: 600;
+            /* font-weight: 600; */
+        }
+
+        .navber ul a:hover {
+            color: #000000;
+
+            /* font-weight: 600; */
+        }
+
+        .navber img {
+            filter: drop-shadow(5px 5px 5px #00000042);
+            /* height: 60px; */
+            margin-left: 10px;
+            height: 120px;
+        }
+
+        .containerrr {
+            display: none;
+        }
+
+        @media only screen and (max-width:845px) {
+            .css-list-btn {
+                flex-wrap: wrap;
+            }
+
+            button {
+                /* padding: 25px 25px; */
+                border-radius: 12px;
+                width: 185px;
+                height: 76px;
+            }
+        }
+
+        @media only screen and (max-width:585px) {
+            h1 {
+                font-size: 23px;
+            }
+
+            .css-list-btn {
+
+                margin-top: 120px;
+
+            }
+
+            .hamburger {
+                display: none;
+            }
+
+            #input-html {
+                width: 59%;
+                /* height: 20vh; */
+                display: grid;
+                grid-row: 5;
+                order: 0;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 0rem;
+                column-gap: 0rem;
+                padding: 0px;
+                margin-top: -11px;
+            }
+
+            .container {
+                display: flex;
+                flex-direction: row;
+                position: relative;
+                top: 130px;
+            }
+
+            #genCode {
+                top: 140px;
+            }
+
+            input,
+            select {
+                width: 100px;
+            }
+
+            .border-con select {
+                width: 67px;
+            }
+
+            label {
+                width: 112px;
+                font-size: 9px;
+            }
+
+            .showButtonContainer {
+                height: 18vh;
+                width: 36%;
+                align-items: center;
+                display: flex;
+                justify-content: center;
+                margin: auto;
+                margin-left: 54px;
+            }
+
+            .humbergar {
+                /* display: block; */
+                height: 25px;
+                width: 30px;
+                position: relative;
+                cursor: pointer;
+                margin: auto;
+
+            }
+
+            .humbergar .menu,
+            .humbergar::after,
+            .humbergar::before {
+                content: '';
+                display: block;
+                height: 2px;
+                width: 60%;
+                background-color: #ffffff;
+                margin: 4px 0px;
+                transition: 0.4s;
+                border-radius: 16px;
+            }
+
+            #hamburger-click-containerrr {
+                display: none;
+            }
+
+            #hamburger-click-containerrr.iss-active {
+                display: inline-block;
+                margin-left: 144px;
+                margin-top: 259px;
+                height: 300px;
+                width: 345px;
+                background: #3b3b3b;
+                border-radius: 5px;
+            }
+
+            .navber ul {
+                display: flex;
+                flex-direction: column;
+                margin-top: 12px;
+            }
+
+            .navber ul li a {
+                display: flex;
+                justify-content: center;
+                padding: 3px;
+                font-size: 18px;
+            }
+
+            .containerrr {
+                display: inline-block;
+                position: relative;
+                margin-left: -26px;
+            }
+
+            .humbergar.iss-active::before {
+                transform: rotate(-46deg) translate(-1px, 4px);
+            }
+
+            .humbergar.iss-active::after {
+                transform: rotate(37deg) translate(-3px, -9px);
+            }
+
+            .humbergar.iss-active .menu {
+                opacity: 0;
+            }
+
+            .navber img {
+                filter: drop-shadow(5px 5px 5px #00000042);
+                /* height: 60px; */
+                margin-left: 10px;
+                height: 84px;
+            }
+
+        }
+
+        @media only screen and (max-width:405px) {
+            h1 {
+                font-size: 16px;
+            }
+
+            button {
+                border-radius: 12px;
+                width: 125px;
+                height: 56px;
+
+            }
+
+            a button {
+                padding: 0px 0px;
+                font-size: 13px;
+            }
+
+            .css-list-btn {
+
+                margin-top: 100px;
+
+            }
+
+            #hamburger-click-containerrr.iss-active {
+                display: inline-block;
+                margin-left: 52px;
+            }
+        }
+
+        @media only screen and (max-width:285px) {
+            h1 {
+                font-size: 11px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="navber">
+            <img src="logo.png" alt="image">
+            <div class="hamburger" id="hamburger-click-containerrr">
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./navber.html">Navber</a></li>
+                    <li><a href="./button.html">Button</a></li>
+                    <li><a href="./card.html">Card</a></li>
+                    <li><a href="./footer.html">Footer</a></li>
+                </ul>
+            </div>
+            <div class="containerrr">
+                <div class="humbergar">
+                    <div class="menu"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="Card">
+        <div id="card-container">
+            <div class="input-cont">
+                <label for="boxTitle">Card Name</label>
+                <input type="text" id="boxTitle" value="Walter White">
+            </div>
+            <div class="input-cont">
+                <label for="paraGraph">Card Details</label>
+                <input type="text" id="paraGraph" value="Details">
+            </div>
+            <div class="input-cont">
+                <label for="height">Card Height</label>
+                <input type="number" id="height" value="200">
+            </div>
+            <div class="input-cont">
+                <label for="width">Card Width</label>
+                <input type="number" id="width" value="300">
+            </div>
+            <div class="input-cont">
+                <label for="bgColor">Card background-color</label>
+                <input type="color" id="bgColor" value="#ffffff">
+            </div>
+            <div class="input-cont">
+                <label for="fontColor">Card Title Font-color</label>
+                <input type="color" id="fontColor" value="#142468">
+            </div>
+            <div class="input-cont">
+                <label for="DetalsFontColor">Card Details-color</label>
+                <input type="color" id="DetalsFontColor" value="#535353">
+            </div>
+            <div class="input-cont">
+                <label for="borderRadius">Border Radius</label>
+                <input type="number" id="borderRadius" value="12">
+            </div>
+            <div class="input-cont">
+                <label for="boxPadding">Card Padding</label>
+                <input type="number" id="boxPadding" value="0">
+            </div>
+            <div class="input-cont">
+                <!-- <label for="displayflex">Card Title Font-color</label> -->
+                <input type="text" id="displayflex" value="flex" style="display: none;">
+                <input type="text" id="flexdirection" value="column"  style="display: none;">
+                <input type="text" id="justifyContent" value="center"  style="display: none;">
+                <input type="text" id="alignItems" value="center"  style="display: none;">
+            </div>
+
+            <div class="input-cont">
+                <label for="heightImage">Image Height</label>
+                <input type="number" id="heightImage" value="100">
+            </div>
+            <div class="input-cont">
+                <label for="widthImage">Image Width</label>
+                <input type="number" id="widthImage" value="100">
+                <input type="text" id="objectfit" value="cover" style="display: none;">
+            </div>
+            <div class="input-cont">
+                <label for="imaBorderRadious">Image Border Radius</label>
+                <input type="number" id="imaBorderRadious" value="50">
+            </div>
+            <!-- image upload -->
+            <div class="input-cont">
+                <label for="uploadImage">Upload image</label>
+                <input type="file" accept="image/*" id="uploadImage">
+            </div>
+            <div class="input-cont">
+                <label for="titlepadding">Title Padding</label>
+                <input type="number" id="titlepadding" value="12">
+            </div>
+            <div class="input-cont">
+                <label for="photoBorder">Image Border</label>
+                <input type="number" id="photoBorder" value="3">
+                <input type="color" id="photoBorderColor" value="#ffffff">
+            </div>
+            <!-- imageback -->
+            <div class="input-cont">
+                <label for="photoBorder">Image Back</label>
+                <!-- <input type="color" id="backstylecolor" value="#605cb6"> -->
+                <input type="color" id="containerPsudoBg" value="#142468">
+            </div>
+            
+            <div class="input-cont">
+                <label for="photoBorder">Image second border</label>
+                <input type="number" id="imageback2Border" value="4">
+                <input type="color" id="imageback2Bordercolor" value="#605cb6">
+                <!-- <label for="flexdirection">Card Title Font-color</label> -->
+            </div>
+
+            <!-- <div class="input-cont">
+                <label for="psudoBgColor">Psudo sector</label>
+                <input type="text" id="psudoContent" value="" style="display: none;">
+                <input type="color" id="psudoBgColor" value="#00db454">
+                <input type="number" id="psudoBgHeight" value="114">
+                <input type="number" id="psudoBgWidth" value="100">
+              
+            </div> -->
+            <div class="input-cont">
+                <label for="btnName">Button Name</label>
+                <input type="text" id="btnName" value="View Profile">
+            </div>
+            <div class="input-cont">
+                <input type="color" id="btnColor" value="#ffffff">
+            </div>
+            <div class="input-cont">
+                <label for="btnBgColor">Button Background-Color</label>
+                <input type="color" id="btnBgColor" value="#605cb6">
+            </div>
+            <div class="input-cont">
+                <label for="btnPadding">Button Padding</label>
+                <input type="number" id="btnPadding" value="10">
+            </div>
+            <div class="input-cont">
+                <label for="btnFontSize">Button Font Size</label>
+                <input type="number" id="btnFontSize" value="10">
+            </div>
+            <div class="input-cont">
+                
+                <label for="btnHoverColor">Button Hover Color</label>
+                <input type="color" id="btnHoverColor" value="#f2f2f2">
+                <label for="btnHoverBgColor">Button Hover Background-Color</label>
+                <input type="color" id="btnHoverBgColor" value="#726dcf">
+            </div>
+            <!--  -->
+          
+        </div>
+        
+        <div class="showCardContainer">
+            <div id="showCard">
+                <div id="create-Card" class="ContainerCard">
+                    <!-- <div class="stylecolor"><p style="visibility: hidden;" ></p></div> -->
+                    <div class="imagebor">
+                        <img src="profilePhoto.jpg" alt="Profile Photo" id="image">
+                    </div>
+                    <h2 class="Title">Walter White</h2>
+                    <p class="paraGraph"> Walter White, a high school chemistry teacher turned methamphetamine manufacturer, adopts the alias "Heisenberg" as he descends into a world of crime, driven by ambition and desperation. Tragic consequences follow.
+                        Walter White: Once a timid chemistry teacher, becomes ruthless drug lord Heisenberg.</p>
+                    
+                    <button id="Viewbtn">View Profile</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div id="GenerateCode">
+            <button onclick="ShowCode()" id="copybtn">Generate  Code</button>
+        </div> -->
+    </div>
+
+    <!-- <form style="margin-top: 200px;">
+        <img src="#" alt="" id="profilepic">
+        <label for="input-file">update image</label>
+        <input type="file" accept="image/" id="inpima" >
+    </form> -->
+    <script>
+        window.onload = function () {
+            window.addEventListener('scroll', function (e) {
+                if (window.pageYOffset > 100) {
+                    document.querySelector("div").classList.add('is-scrolling');
+                } else {
+                    document.querySelector("div").classList.remove('is-scrolling');
+                }
+            })
+
+            const menu_btn = document.querySelector('.humbergar');
+            const mobile_menu = document.querySelector('#hamburger-click-containerrr');
+            const mobile_cont = document.querySelector('#click-cont');
+
+            menu_btn.addEventListener('click', function () { // iss-active wohi per  hi hoga jahaper click event hoga matlab hamburger and content ki container
+                menu_btn.classList.toggle('iss-active');
+                mobile_menu.classList.toggle('iss-active');
+                mobile_cont.classList.toggle('iss-active');
+            })
+        }
+    </script>
+    <script src="card.js"></script>
+</body>
+
+</html>

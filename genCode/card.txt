@@ -1,0 +1,168 @@
+let card = document.querySelector('.ContainerCard')
+let H2 = document.getElementById('boxTitle')
+let para = document.getElementById('paraGraph')
+let heightCon = document.getElementById('height')
+let widthCon = document.getElementById('width')
+let Bgcolorr = document.getElementById('bgColor')
+let h2fontcolor = document.getElementById('fontColor')
+let DetailsFontColor = document.getElementById('DetalsFontColor')
+let BoxborderRadius = document.getElementById('borderRadius')
+let paddingBox = document.getElementById('boxPadding')
+let displayflex = document.getElementById('displayflex')
+let flexdirection = document.getElementById('flexdirection')
+let justifyContent = document.getElementById('justifyContent')
+let alignItems = document.getElementById('alignItems')
+let titlepad = document.getElementById('titlepadding')
+// imagee
+let heightimage = document.getElementById('heightImage')
+let widthimage = document.getElementById('widthImage')
+let objectfit = document.getElementById('objectfit')
+let imaBorderRadious = document.getElementById('imaBorderRadious')
+let uploadIma = document.getElementById('uploadImage')
+let photoBorder = document.getElementById('photoBorder')
+let photoBorderColor = document.getElementById('photoBorderColor')
+// Image back
+let backstylecolor = document.getElementById('backstylecolor')
+let imageback2Border = document.getElementById('imageback2Border')
+let imageback2Bordercolor = document.getElementById('imageback2Bordercolor')
+
+card.addEventListener('input', generateCard)
+H2.addEventListener('input', generateCard)
+para.addEventListener('input', generateCard)
+heightCon.addEventListener('input', generateCard)
+widthCon.addEventListener('input', generateCard)
+Bgcolorr.addEventListener('input', generateCard)
+h2fontcolor.addEventListener('input', generateCard)
+DetailsFontColor.addEventListener('input', generateCard)
+BoxborderRadius.addEventListener('input', generateCard)
+paddingBox.addEventListener('input', generateCard)
+flexdirection.addEventListener('input', generateCard)
+justifyContent.addEventListener('input', generateCard)
+alignItems.addEventListener('input', generateCard)
+titlepad.addEventListener('input', generateCard)
+//image
+heightimage.addEventListener('input', generateCard)
+widthimage.addEventListener('input', generateCard)
+objectfit.addEventListener('input', generateCard)
+imaBorderRadious.addEventListener('input', generateCard)
+uploadIma.addEventListener('input', generateCard)
+photoBorder.addEventListener('input', generateCard)
+photoBorderColor.addEventListener('input', generateCard)
+// image back
+backstylecolor.addEventListener('input', generateCard)
+imageback2Border.addEventListener('input', generateCard)
+imageback2Bordercolor.addEventListener('input', generateCard)
+
+
+function generateCard() {
+    let GenCard = card.value
+    let heading = H2.value
+    let paraGraph = para.value
+    let height = heightCon.value
+    let width = widthCon.value
+    let backgroundColor = Bgcolorr.value
+    let TitleFontColor = h2fontcolor.value
+    let borderRadius = BoxborderRadius.value
+    let padding = paddingBox.value
+    let display = displayflex.value
+    let flexdirectioncolumn = flexdirection.value
+    let justifyContentCenter = justifyContent.value
+    let alignItemsCenter = alignItems.value
+    let paraColor = DetailsFontColor.value
+    let titlepadding = titlepad.value
+    //image
+    let heiightima = heightimage.value
+    let widthima = widthimage.value
+    let objecttfitcover = objectfit.value
+    let borderRadiusimage = imaBorderRadious.value || '%';
+    let uploadImage = uploadIma.value
+    let photoBorderRadius = photoBorder.value
+    let photoBorderRadiusColor = photoBorderColor.value
+    let backstylecolor2 = backstylecolor.value
+    let imageback2Border2 = imageback2Border.value
+    let imageback2Bordercolor2 = imageback2Bordercolor.value
+
+    let showCard = document.getElementById('showCard');
+    let CardCSS = `<div id="create-Card" class="ContainerCard">${GenCard ? GenCard : ''}
+    <div class="stylecolor"><p style="visibility: hidden;" ></p></div>
+    <div class="imagebor">
+    <img src="profilePhoto.jpg" alt="Profile Photo" id="image">
+    </div>
+    <h2 class="Title">${heading}</h2>
+    <p class="paraGraph">${paraGraph}</p>
+    <button id="Viewbtn">View Profile</button>
+    </div>`;
+
+    showCard.innerHTML = CardCSS;
+    // Styling
+    let style = document.createElement('style')
+    style.textContent = `#create-Card{
+        background-color: ${backgroundColor};
+        min-height: ${height}px;
+        max-width: ${width}px;
+        border-radius: ${borderRadius}px;
+        padding: ${padding}px;
+        display: ${display};
+        flex-direction: ${flexdirectioncolumn};
+        align-items: ${alignItemsCenter};
+        position: absulute;
+        
+        .Title{
+            color: ${TitleFontColor};
+            padding: ${titlepadding}px;
+        }
+        .paraGraph{
+            color: ${paraColor};
+        }
+        #image{
+            height: ${heiightima}px;
+            width: ${widthima}px;
+            object-fit: ${objecttfitcover};
+            border-radius: ${borderRadiusimage}%;
+            border: ${photoBorderRadius}px solid ${photoBorderRadiusColor};
+        }
+        .stylecolor{
+            background-color: ${backstylecolor2};
+        }
+        .imagebor{
+            border: ${imageback2Border2}px solid ${imageback2Bordercolor2};
+        }
+       
+    }`
+
+    // justify-content: ${justifyContentCenter};
+    document.head.appendChild(style);
+    uploadImage.onchange = evt => {
+        let [file] = uploadImage.files
+        if (file) {
+            image.src = URL.createObjectURL(file)
+        }
+    }
+
+    // show codes
+    // let clickbtn = document.getElementById('copybtn')
+    // clickbtn.addEventListener('click',function(){
+    //     let showCode = document.getElementById('GenerateCode')
+    //     showCode.textContent =`#create-Card{
+    //         height: ${height}px;
+    //         width: ${width}px;
+    //         background-color: ${backgroundColor};
+    //     }`;
+    // })
+
+
+}
+// let profilePic = document.getElementById('profile-pic')
+// // profilePic.addEventListener("change",uploadImage)
+
+// let addImage = document.getElementsByClassName('profile-pic')
+// addImage.onchange = function(){
+//     profilePic.src = URL.createObjectURL(inputFile.files[0])
+// }
+
+uploadImage.onchange = evt => {
+    let [file] = uploadImage.files
+    if (file) {
+        image.src = URL.createObjectURL(file)
+    }
+}

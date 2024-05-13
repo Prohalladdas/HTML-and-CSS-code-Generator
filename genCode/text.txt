@@ -1,0 +1,68 @@
+function generateBtn() {
+    let nameBtn = document.getElementById('nameBtn').value;
+    let colorBtn = document.getElementById('colorBtn').value;
+    let BGColorBtn = document.getElementById('BGColorBtn').value;
+    let BorderRadiousBtn = document.getElementById('BorderRadiousBtn').value + "px";
+    let BorderSizeBtn = document.getElementById('BorderSizeBtn').value + "px solid ";
+    let fontSizeBtn = document.getElementById('fontSizeBtn').value + "px";
+    let SizeBtn = document.getElementById('SizeBtn').value + "px";
+    let fontWeighBtn = document.getElementById('fontWeighBtn').value;
+    let heightBtn = document.getElementById('heightBtn').value + "px";
+    let widthBtn = document.getElementById('widthBtn').value + "px";
+    let cursorPointer = document.getElementById('cursorPointer').value;
+    let showBtn = document.getElementById('showBtn');
+    // let ButtonCSS = `<button class="create-Button ' + nameBtn + '" style="color:  ' + colorBtn + ' ;background-color: ' ${BGColorBtn} ';border-radius:' + ${BorderRadiousBtn} + ';border: ' + BorderSizeBtn + '; font-size: ' + fontSizeBtn + ';padding:' + SizeBtn + ';font-weight:' + fontWeighBtn + '; height:' + ${heightBtn ? heightBtn : '100px'}  + '; width:' + widthBtn + ';cursor:' + cursorPointer  +'; "> ${ nameBtn ? nameBtn : 'Button'}</button>`;
+
+     // CssCode.textContent = '.create-Button {\n' +
+    //     'color: ' + colorBtn + ';\n' +
+    //     'background-color: ' + BGColorBtn + ';\n' +
+    //     'border-radius: ' + BorderRadiousBtn + ';\n' +
+    //     'border: ' + BorderSizeBtn + ';\n' +
+    //     'font-size: ' + fontSizeBtn + ';\n' +
+    //     'padding: ' + SizeBtn + ';\n' +
+    //     'font-weight: ' + fontWeighBtn + ';\n' +
+    //     'height: ' + heightBtn + ';\n' +
+    //     'weight: ' + widthBtn + ';\n' +
+    //     'cursor: ' + cursorPointer + ';\n' +
+    //     '}\n\n' +
+    //     // '.create-Button:hover {\n' + // Add hover effect
+    //     // 'background-color: ' + btnHover + ';\n' +
+    //     // '}';
+    //     '}';
+
+}
+generateBtn();
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//Ye CSS code Copy karne ke liye
+function copyCode() {
+    let YourCssCode = document.getElementById('YourCssCode');
+    let range = document.createRange()
+    range.selectNode(YourCssCode);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand("copy");
+    window.getSelection().removeAllRanges();
+}
+// Ye after click copyCode Button ko 3 second baad phirse pehle jaisa karne ke liye
+let copyCodeButton = document.getElementById('copiedsucc');
+copyCodeButton.addEventListener('click', function () {
+    copyCodeButton.textContent = 'Copied'
+
+    setTimeout(function () {
+        copyCodeButton.textContent = 'Copy CSS Code'
+    }, 3000)
+});
+
+
+
+    // let ButtonCSS = `<button id="create-Button"+ style="color:${colorBtn ? '#ffffff' : '#ffffff'}; background-color:${BGColorBtn ? BGColorBtn : '#00EB66'};border-radius:${BorderRadiousBtn ? BorderRadiousBtn : '200'};border:${BorderSizeBtn ? BorderSizeBtn : '300'}; font-size:${fontSizeBtn ? fontSizeBtn : '20'};padding:${SizeBtn ? SizeBtn : '20'}; font-weight:${fontWeighBtn ? fontWeighBtn : '600'}; height:${heightBtn ? heightBtn : '100'}; width:${widthBtn ? widthBtn : '300'}; cursor:${cursorPointer ? cursorPointer : 'pointer'};">${nameBtn ? nameBtn : 'Naruto'}</button>`
+    // let ButtonCSS = `<button class="create-Button " style="color:${colorBtn ? colorBtn : 'ffffff'};background-color:#ff0000;border-radius: 400px;border: 400px; font-size:16px;padding: 42px;font-weight:600; height: 100px; width:500px;cursor:pointer;"> Button</button>`
+
+    // let ButtonCSS = `<button class="create-Button ' + nameBtn + '" style="color:  ' + colorBtn + ' ;background-color: ' ${BGColorBtn} ';border-radius:' + ${BorderRadiousBtn} + ';border: ' + BorderSizeBtn + '; font-size: ' + fontSizeBtn + ';padding:' + SizeBtn + ';font-weight:' + fontWeighBtn + '; height:' + ${heightBtn ? heightBtn : '100px'}  + '; width:' + widthBtn + ';cursor:' + cursorPointer  +'; "> ${nameBtn ? nameBtn : 'Button'}</button>`;
+
+       // nameBtn.addEventListener('onclick' , function(){
+    //     let btnName = nameBtn.value;
+    //     showBtn.innerHTML = '<button style="color:aliceblue; background-color: black;border-radius: 1000px; border: 2px solid; font-size: 14px; font-weight: 600; height: 100px; width: 200px; cursor: pointer;">'+ btnName +'</button>'
+    // })
+
+    // let ButtonCSS = `<button id="create-Button" class="buttn" style="color: ${colorBtn}; background-color: ${BGColorBtn}; border-radius: ${BorderRadiousBtn}px; border: ${BorderSizeBtn}; font-size: ${fontSizeBtn}px; padding: ${SizeBtn}px; font-weight: ${fontWeightBtn}; height: ${heightBtn}px; width: ${widthBtn}px; cursor: ${cursorPointer}; box-shadow:${showBtn ? '0 1px 17px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)' :''}">${nameBtn ? nameBtn : 'Naruto'}</button>`;
