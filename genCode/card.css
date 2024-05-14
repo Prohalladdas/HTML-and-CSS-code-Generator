@@ -99,10 +99,10 @@
     background-color: #605cb6;
     height: 114px;
     width: 100%;
-    display: flex;
-    justify-content: center;
     border-top-right-radius: 12px;
     border-top-left-radius: 12px;
+    display: flex;
+    justify-content: center;
     position: absolute;
 }
 

@@ -84,7 +84,7 @@ select {
     background-color: #ffffff;
     box-shadow: 1px 3px 10px -8px;
     /* box-shadow: 5px 3px 10px -8px; */
-    width: 55%;
+    width: 45%;
     border-radius: 12px;
     height: auto;
     margin: auto;
@@ -269,26 +269,20 @@ header {
 .CloseCode {
     display: flex;
     justify-content: center;
-    margin-top: 16px;
-}
-
-.CloseCode button {
-    padding: 6px;
-    width: 86px;
-    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.5), 0 0px 16px 0 rgba(0, 0, 0, 0.1);
-    background-color: #343a40;
-    color: white;
-    border-radius: 19px;
-    border: none;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.2s
+    position: relative;
+    top: 35px;
+    margin-left: 530px;
 }
 
 .containerrr {
     display: none;
 }
 
+.closeButton{
+    font-size: 22px;
+    font-weight: 600;
+    cursor: pointer; 
+}
 /* responsive */
 @media only screen and (min-width:635px) and (max-width:1191px) {
 

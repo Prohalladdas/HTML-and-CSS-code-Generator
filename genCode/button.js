@@ -96,9 +96,9 @@ function generateBtn() {
     let cssCodeElement = document.getElementById('YourCssCode');
     cssCodeElement.textContent = cssCode;
     // show Html code onn display
-    let htmlCode = `<button id="create-Button">${nameBtn ? nameBtn : 'Button'}</button>`
-    let htmlCodeElement = document.getElementById('YourHtmlCode');
-    htmlCodeElement.textContent = htmlCode;
+    // let htmlCode = `<button id="create-Button">${nameBtn ? nameBtn : 'Button'}</button>`
+    // let htmlCodeElement = document.getElementById('YourHtmlCode');
+    // htmlCodeElement.textContent = htmlCode;
 }
 generateBtn();
 // Function to copy CSS code
@@ -112,15 +112,15 @@ function copyCode() {
     window.getSelection().removeAllRanges();
 };
 //Html code copy code
-function copyCodeHtml() {
-    let yourHtmlCode = document.getElementById('YourHtmlCode');
-    let range = document.createRange();
-    range.selectNode(yourHtmlCode);
-    window.getSelection().removeAllRanges();
-    window.getSelection().addRange(range);
-    document.execCommand("copy");
-    window.getSelection().removeAllRanges();
-}
+// function copyCodeHtml() {
+//     let yourHtmlCode = document.getElementById('YourHtmlCode');
+//     let range = document.createRange();
+//     range.selectNode(yourHtmlCode);
+//     window.getSelection().removeAllRanges();
+//     window.getSelection().addRange(range);
+//     document.execCommand("copy");
+//     window.getSelection().removeAllRanges();
+// }
 
 // Add event listener to the copy button after click event
 let copyCodeButton = document.getElementById('copiedsucc');
@@ -132,14 +132,14 @@ copyCodeButton.addEventListener('click', function () {
     }, 3000);
 });
 //Html code copy button  after click
-let Htmlcopiedsucced = document.getElementById('Htmlcopiedsucced');
-Htmlcopiedsucced.addEventListener('click', function () {
-    Htmlcopiedsucced.textContent = 'Copied ✓';
+// let Htmlcopiedsucced = document.getElementById('Htmlcopiedsucced');
+// Htmlcopiedsucced.addEventListener('click', function () {
+//     Htmlcopiedsucced.textContent = 'Copied ✓';
 
-    setTimeout(function () {
-        Htmlcopiedsucced.textContent = 'Copy HTML Code';
-    }, 3000);
-});
+//     setTimeout(function () {
+//         Htmlcopiedsucced.textContent = 'Copy HTML Code';
+//     }, 3000);
+// });
 
 
 // Popup, Isme Container ki class add karke then button per click karke  bg blur hoga css ki madad se or Undo hoga

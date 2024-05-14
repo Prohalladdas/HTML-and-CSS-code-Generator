@@ -335,11 +335,7 @@
                 <label for="imaBorderRadious">Image Border Radius</label>
                 <input type="number" id="imaBorderRadious" value="50">
             </div>
-            <!-- image upload -->
-            <div class="input-cont">
-                <label for="uploadImage">Upload image</label>
-                <input type="file" accept="image/*" id="uploadImage">
-            </div>
+            <!-- image -->
             <div class="input-cont">
                 <label for="titlepadding">Title Padding</label>
                 <input type="number" id="titlepadding" value="12">
@@ -351,9 +347,25 @@
             </div>
             <!-- imageback -->
             <div class="input-cont">
-                <label for="photoBorder">Image Back</label>
-                <!-- <input type="color" id="backstylecolor" value="#605cb6"> -->
-                <input type="color" id="containerPsudoBg" value="#142468">
+                <label for="containerPsudoBg">Image Back</label>
+                <input type="color" id="containerPsudoBg" value="#605cb6">
+            </div>
+            <div class="input-cont">
+                <label for="psudoBgHeight">Image Back Height</label>
+                <input type="number" id="psudoBgHeight" value="114">
+            </div>
+            <div class="input-cont">
+                <label for="psudoBgWidth">Image Back Weight</label>
+                <input type="number" id="psudoBgWidth" value="100">
+            </div>
+            <div class="input-cont">
+                <label for="borderleftR">Image Back Border-Radious Left</label>
+                <input type="number" id="borderleftR" value="12">
+            </div>
+            <div class="input-cont">
+                <label for="borderRightR">Image Back Border-Radious Right</label>
+                <input type="number" id="borderRightR" value="12">
+                <input type="text" id="psudoContent" value="" style="display: none;">
             </div>
             
             <div class="input-cont">
@@ -363,19 +375,12 @@
                 <!-- <label for="flexdirection">Card Title Font-color</label> -->
             </div>
 
-            <!-- <div class="input-cont">
-                <label for="psudoBgColor">Psudo sector</label>
-                <input type="text" id="psudoContent" value="" style="display: none;">
-                <input type="color" id="psudoBgColor" value="#00db454">
-                <input type="number" id="psudoBgHeight" value="114">
-                <input type="number" id="psudoBgWidth" value="100">
-              
-            </div> -->
             <div class="input-cont">
                 <label for="btnName">Button Name</label>
                 <input type="text" id="btnName" value="View Profile">
             </div>
             <div class="input-cont">
+                <label for="btnColor">Button Color</label>
                 <input type="color" id="btnColor" value="#ffffff">
             </div>
             <div class="input-cont">
@@ -387,13 +392,17 @@
                 <input type="number" id="btnPadding" value="10">
             </div>
             <div class="input-cont">
+                <label for="btnWidth">Button width</label>
+                <input type="number" id="btnWidth" value="104">
+            </div>
+            <div class="input-cont">
                 <label for="btnFontSize">Button Font Size</label>
                 <input type="number" id="btnFontSize" value="10">
             </div>
             <div class="input-cont">
-                
                 <label for="btnHoverColor">Button Hover Color</label>
                 <input type="color" id="btnHoverColor" value="#f2f2f2">
+
                 <label for="btnHoverBgColor">Button Hover Background-Color</label>
                 <input type="color" id="btnHoverBgColor" value="#726dcf">
             </div>
@@ -404,7 +413,6 @@
         <div class="showCardContainer">
             <div id="showCard">
                 <div id="create-Card" class="ContainerCard">
-                    <!-- <div class="stylecolor"><p style="visibility: hidden;" ></p></div> -->
                     <div class="imagebor">
                         <img src="profilePhoto.jpg" alt="Profile Photo" id="image">
                     </div>

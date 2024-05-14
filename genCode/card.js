@@ -18,10 +18,9 @@ let heightimage = document.getElementById('heightImage')
 let widthimage = document.getElementById('widthImage')
 let objectfit = document.getElementById('objectfit')
 let imaBorderRadious = document.getElementById('imaBorderRadious')
-let uploadIma = document.getElementById('uploadImage')
 let photoBorder = document.getElementById('photoBorder')
 let photoBorderColor = document.getElementById('photoBorderColor')
-// Image back
+// Image back containerPsudoBg
 // let backstylecolor = document.getElementById('backstylecolor')
 let imageback2Border = document.getElementById('imageback2Border')
 let imageback2Bordercolor = document.getElementById('imageback2Bordercolor')
@@ -29,16 +28,17 @@ let imageback2Bordercolor = document.getElementById('imageback2Bordercolor')
 let btnNamebox = document.getElementById('btnName')
 let btnColorbox = document.getElementById('btnColor')
 let btnBgColorbox = document.getElementById('btnBgColor')
+let btnWidthbox = document.getElementById('btnWidth')
 let btnPaddingbox = document.getElementById('btnPadding')
 let btnFontSizebox = document.getElementById('btnFontSize')
 let btnHoverColorbox = document.getElementById('btnHoverColor')
 let btnHoverBgColorbox = document.getElementById('btnHoverBgColor')
 // Psudo
-// let psudoContentbox = document.getElementById('psudoContent')
-// let psudoBgColorbox = document.getElementById('psudoBgColor')
-// let psudoBgHeightbox = document.getElementById('psudoBgHeight')
-// let psudoBgWeightbox = document.getElementById('psudoBgWeight')
-
+let containerPsudoBg = document.getElementById('containerPsudoBg')
+let borderleftRbox = document.getElementById('borderleftR')
+let borderRightRbox = document.getElementById('borderRightR')
+let psudoBgHeightbox = document.getElementById('psudoBgHeight')
+let psudoBgWidthbox = document.getElementById('psudoBgWidth')
 
 card.addEventListener('input', generateCard)
 H2.addEventListener('input', generateCard)
@@ -59,13 +59,13 @@ heightimage.addEventListener('input', generateCard)
 widthimage.addEventListener('input', generateCard)
 objectfit.addEventListener('input', generateCard)
 imaBorderRadious.addEventListener('input', generateCard)
-uploadIma.addEventListener('input', generateCard)
 photoBorder.addEventListener('input', generateCard)
 photoBorderColor.addEventListener('input', generateCard)
 // Btn
 btnNamebox.addEventListener('input', generateCard)
 btnColorbox.addEventListener('input', generateCard)
 btnBgColorbox.addEventListener('input', generateCard)
+btnWidthbox.addEventListener('input', generateCard)
 btnPaddingbox.addEventListener('input', generateCard)
 btnFontSizebox.addEventListener('input', generateCard)
 btnHoverColorbox.addEventListener('input', generateCard)
@@ -75,10 +75,11 @@ btnHoverBgColorbox.addEventListener('input', generateCard)
 imageback2Border.addEventListener('input', generateCard)
 imageback2Bordercolor.addEventListener('input', generateCard)
 // Psudo
-// psudoContentbox.addEventListener('input', generateCard)
-// psudoBgColorbox.addEventListener('input', generateCard)
-// psudoBgHeightbox.addEventListener('input', generateCard)
-// psudoBgWeightbox.addEventListener('input', generateCard)
+containerPsudoBg.addEventListener('input', generateCard)
+borderleftRbox.addEventListener('input', generateCard)
+borderRightRbox.addEventListener('input', generateCard)
+psudoBgHeightbox.addEventListener('input', generateCard)
+psudoBgWidthbox.addEventListener('input', generateCard)
 
 
 
@@ -103,7 +104,6 @@ function generateCard() {
     let widthima = widthimage.value
     let objecttfitcover = objectfit.value
     let borderRadiusimage = imaBorderRadious.value || '%';
-    let uploadImage = uploadIma.value
     let photoBorderRadius = photoBorder.value
     let photoBorderRadiusColor = photoBorderColor.value
     // let backstylecolor2 = backstylecolor.value
@@ -113,16 +113,18 @@ function generateCard() {
     let btnNameboxlast = btnNamebox.value
     let btnColorboxItem = btnColorbox.value
     let btnBgColorboxItem = btnBgColorbox.value
+    let btnWidthboxItem = btnWidthbox.value
     let btnPaddingboxItem = btnPaddingbox.value
     let btnFontSizeboxItem = btnFontSizebox.value
     let btnHoverColorItem = btnHoverColorbox.value
     let btnHoverBgColorItem = btnHoverBgColorbox.value
     // Psudo
-    // let psudoContentitem = psudoContentbox.value
-    // let psudoBgColoritem = psudoBgColorbox.value
-    // let psudoBgHeightItem = psudoBgHeightbox.value
-    // let psudoBgWeightItem = psudoBgWeightbox.value
-   
+    let containerPsudoBgItem = containerPsudoBg.value
+    let borderleftRboxitem = borderleftRbox.value
+    let borderRightRboxitem = borderRightRbox.value
+    let psudoBgHeightItem = psudoBgHeightbox.value
+    let psudoBgWeightItem = psudoBgWidthbox.value
+
 
     let showCard = document.getElementById('showCard');
     let CardCSS = `<div id="create-Card" class="ContainerCard">${GenCard ? GenCard : ''}
@@ -135,6 +137,7 @@ function generateCard() {
     </div>`;
 
     showCard.innerHTML = CardCSS;
+
     // Styling
     let style = document.createElement('style')
     style.textContent = `#create-Card{
@@ -171,22 +174,25 @@ function generateCard() {
             background-color: ${btnBgColorboxItem};
             padding: ${btnPaddingboxItem}px;
             font-size: ${btnFontSizeboxItem}px;
+            width: ${btnWidthboxItem}px;
         }
         #Viewbtn:hover{
             color: ${btnHoverColorItem};
             background-color: ${btnHoverBgColorItem};
         }
-     
+    }`
+    let psudoselector = 
+    `.ContainerCard::before {
+        background-color: ${containerPsudoBgItem};
+        height: ${psudoBgHeightItem}px;
+        width: ${psudoBgWeightItem}%;
+        border-top-right-radius: ${borderleftRboxitem}px;
+        border-top-left-radius: ${borderRightRboxitem}px;
     }`
 
-    // justify-content: ${justifyContentCenter};
     document.head.appendChild(style);
-    uploadImage.onchange = evt => {
-        let [file] = uploadImage.files
-        if (file) {
-            image.src = URL.createObjectURL(file)
-        }
-    }
+    let styleSheet = style.sheet;
+    styleSheet.insertRule(psudoselector, styleSheet.psudoselectors);
 
     // show codes
     // let clickbtn = document.getElementById('copybtn')
@@ -200,18 +206,5 @@ function generateCard() {
     // })
 
 
-}
-// let profilePic = document.getElementById('profile-pic')
-// // profilePic.addEventListener("change",uploadImage)
 
-// let addImage = document.getElementsByClassName('profile-pic')
-// addImage.onchange = function(){
-//     profilePic.src = URL.createObjectURL(inputFile.files[0])
-// }
-
-uploadImage.onchange = evt => {
-    let [file] = uploadImage.files
-    if (file) {
-        image.src = URL.createObjectURL(file)
-    }
 }

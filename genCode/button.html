@@ -115,19 +115,24 @@
                 </div>
             </div>
         </div>
-    </div>
-    <!-- BackGround blur Or Code Hide karne ke liye  -->
-    <div id="genCode">
-        <button onclick="popup()"> Generate Code</button>
+        <!-- BackGround blur Or Code Hide karne ke liye  -->
+        <div id="genCode">
+            <button onclick="popup()"> Generate Code</button>
+        </div>
     </div>
 
     <div id="Code-Container">
         <!-- HTML code -->
-        <div class="show-Html-code" style="margin-bottom: 20px;">
+        <!-- <div class="show-Html-code" style="margin-bottom: 20px;">
             <h4 style=" margin-bottom: 12px;">Your <span style="color: #5900ff; font-style: italic;">HTML</span> Code
             </h4>
             <pre id="YourHtmlCode"></pre>
             <button onclick="copyCodeHtml()" id="Htmlcopiedsucced">Copy HTML Code</button>
+        </div> -->
+        
+         <!-- Code Hide Or Blur hatane ke liye -->
+         <div class="CloseCode">
+            <div onclick="popup()" class="closeButton">✕</div>
         </div>
         <!-- CSS Code -->
         <div class="show-css-code">
@@ -137,10 +142,7 @@
             <button onclick="copyCode()" id="copiedsucc">Copy CSS Code</button>
         </div>
 
-        <!-- Code Hide Or Blur hatane ke liye -->
-        <div class="CloseCode">
-            <button onclick="popup()">Close</button>
-        </div>
+       
 
     </div>
     <script src="button.js"></script>
