@@ -28,6 +28,7 @@ let imageback2Bordercolor = document.getElementById('imageback2Bordercolor')
 let btnNamebox = document.getElementById('btnName')
 let btnColorbox = document.getElementById('btnColor')
 let btnBgColorbox = document.getElementById('btnBgColor')
+let btnborderRadius = document.getElementById('btnborderRadius')
 let btnWidthbox = document.getElementById('btnWidth')
 let btnPaddingbox = document.getElementById('btnPadding')
 let btnFontSizebox = document.getElementById('btnFontSize')
@@ -70,6 +71,7 @@ btnPaddingbox.addEventListener('input', generateCard)
 btnFontSizebox.addEventListener('input', generateCard)
 btnHoverColorbox.addEventListener('input', generateCard)
 btnHoverBgColorbox.addEventListener('input', generateCard)
+btnborderRadius.addEventListener('input', generateCard)
 // image back
 // backstylecolor.addEventListener('input', generateCard)
 imageback2Border.addEventListener('input', generateCard)
@@ -118,6 +120,7 @@ function generateCard() {
     let btnFontSizeboxItem = btnFontSizebox.value
     let btnHoverColorItem = btnHoverColorbox.value
     let btnHoverBgColorItem = btnHoverBgColorbox.value
+    let btnborderRadiusItem = btnborderRadius.value
     // Psudo
     let containerPsudoBgItem = containerPsudoBg.value
     let borderleftRboxitem = borderleftRbox.value
@@ -175,14 +178,15 @@ function generateCard() {
             padding: ${btnPaddingboxItem}px;
             font-size: ${btnFontSizeboxItem}px;
             width: ${btnWidthboxItem}px;
+            border-radius:${btnborderRadiusItem}px;
         }
         #Viewbtn:hover{
             color: ${btnHoverColorItem};
             background-color: ${btnHoverBgColorItem};
         }
     }`
-    let psudoselector = 
-    `.ContainerCard::before {
+    let psudoselector =
+        `.ContainerCard::before {
         background-color: ${containerPsudoBgItem};
         height: ${psudoBgHeightItem}px;
         width: ${psudoBgWeightItem}%;
@@ -194,17 +198,153 @@ function generateCard() {
     let styleSheet = style.sheet;
     styleSheet.insertRule(psudoselector, styleSheet.psudoselectors);
 
-    // show codes
-    // let clickbtn = document.getElementById('copybtn')
-    // clickbtn.addEventListener('click',function(){
-    //     let showCode = document.getElementById('GenerateCode')
-    //     showCode.textContent =`#create-Card{
-    //         height: ${height}px;
-    //         width: ${width}px;
-    //         background-color: ${backgroundColor};
-    //     }`;
-    // })
+    // show css code
+    let cssCode = `#create-Card{
+            background-color: ${backgroundColor};
+            min-height: ${height}px;
+            max-width: ${width}px;
+            border-radius: ${borderRadius}px;
+            display: ${display};
+            flex-direction: ${flexdirectioncolumn};
+            align-items: ${alignItemsCenter};
+            padding: ${padding}px;
+            box-shadow: 1px -1px 12px -6px;
+            position:relative;
+    }
+            
+            .Title{
+                color: ${TitleFontColor};
+                padding: ${titlepadding}px;
+            }
+            .paraGraph{
+                color: ${paraColor};
+                text-align: center;
+                padding: 0px 12px 1px 12px;
+            }
+            #image{
+                height: ${heiightima}px;
+                width: ${widthima}px;
+                object-fit: ${objecttfitcover};
+                border-radius: ${borderRadiusimage}%;
+                border: ${photoBorderRadius}px solid ${photoBorderRadiusColor};
+                position: relative;
+            }
+          
+            .imagebor{
+                border: ${imageback2Border2}px solid ${imageback2Bordercolor2};
+                height: 108px;
+                border-radius: 50%;
+                position: relative;
+                margin-top: 35px;
+            }
+            #Viewbtn {
+                color: ${btnColorboxItem};
+                background-color: ${btnBgColorboxItem};
+                padding: ${btnPaddingboxItem}px;
+                font-size: ${btnFontSizeboxItem}px;
+                width: ${btnWidthboxItem}px;
+                border-radius:${btnborderRadiusItem}px;
+                border: 1px solid #ffffff;
+                margin-bottom: 20px;
+                margin-top: 20px;
+                cursor:pointer;
+            }
+            #Viewbtn:hover{
+                color: ${btnHoverColorItem};
+                background-color: ${btnHoverBgColorItem};
+            }
+    
+            #create-Card.ContainerCard::before {
+                content: "";
+                background-color: ${containerPsudoBgItem};
+                height: ${psudoBgHeightItem}px;
+                width: ${psudoBgWeightItem}%;
+                border-top-right-radius: ${borderleftRboxitem}px;
+                border-top-left-radius: ${borderRightRboxitem}px;
+                position:absolute;
+            }`
 
+    let cssCodeElement = document.getElementById('YourCssCode');
+    cssCodeElement.textContent = cssCode;
 
+    // html code
+    let showhtml = `<div id="create-Card" class="ContainerCard">${GenCard ? GenCard : ''}
+    <div class="imagebor">
+    <img src="profilePhoto.jpg" alt="Profile Photo" id="image">
+    </div>
+    <h2 class="Title">${heading}</h2>
+    <p class="paraGraph">${paraGraph}</p>
+    <button id="Viewbtn">${btnNameboxlast ? btnNameboxlast : 'View Profile'}</button>
+    </div>`
+    let htmlcode = document.getElementById('YourHtmlCode')
+    htmlcode.textContent = showhtml;
+}
+generateCard()
+// function copyCode() {
+//     let copiedsucc = document.getElementById('copiedsucc')
+//     let copied = cssCode;
+//     copiedsucc.addEventListener('click', () => {
+//         copied.select();
+//         document.execCommand('copy');
+//     })
+// }
+function copyCode() {
+    let YourCssCode = document.getElementById('YourCssCode');
+    let range = document.createRange();
+    range.selectNode(YourCssCode);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand("copy");
+    window.getSelection().removeAllRanges();
+}
+function copyCodeHtml() {
+    let yourHtmlCode = document.getElementById('YourHtmlCode');
+    let range = document.createRange();
+    range.selectNode(yourHtmlCode);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand("copy");
+    window.getSelection().removeAllRanges();
+}
+//Html code copy button  after click
+let Htmlcopiedsucced = document.getElementById('Htmlcopiedsucced');
+Htmlcopiedsucced.addEventListener('click', function () {
+    Htmlcopiedsucced.textContent = 'Copied ✓';
 
+    setTimeout(function () {
+        Htmlcopiedsucced.textContent = 'Copy HTML Code';
+    }, 3000);
+});
+let copyCodeButton = document.getElementById('copiedsucc');
+copyCodeButton.addEventListener('click', function () {
+    copyCodeButton.textContent = 'Copied ✓';
+
+    setTimeout(function () {
+        copyCodeButton.textContent = 'Copy CSS Code';
+    }, 3000);
+});
+
+// Popup, Isme Container ki class add karke then button per click karke  bg blur hoga css ki madad se or Undo hoga
+function popup(){
+    let bgBlur = document.querySelector('.all')
+    bgBlur.classList.toggle('active')
+    let CodeContainer = document.querySelector('#Code-Container')
+    CodeContainer.classList.toggle('AfterClick')
+    
+    let clsbody = document.querySelector('.closeBody')
+    clsbody.classList.toggle('clsBodyClick')
+    
+}
+
+// hamburger
+window.onload = function  (){
+    const menu_btn = document.querySelector('.humbergar');
+    const mobile_menu = document.querySelector('#hamburger-click-containerrr');
+    const mobile_cont = document.querySelector('#click-cont');
+
+    menu_btn.addEventListener('click',function(){ // iss-active wohi per  hi hoga jahaper click event hoga matlab hamburger and content ki container
+        menu_btn.classList.toggle('iss-active');
+        mobile_menu.classList.toggle('iss-active');
+        mobile_cont.classList.toggle('iss-active');
+    })
 }

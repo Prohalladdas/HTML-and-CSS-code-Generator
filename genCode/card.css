@@ -13,12 +13,14 @@
     display: flex;
     justify-content: space-between;
     padding: 20px;
+    padding: 0px 50px 0px 20px;
+
     /* flex-direction: column-reverse; */
 }
 
 #create-Card {
     min-height: 200px;
-    max-width: 300px;
+    max-width: 250px;
     background-color: #ffffff;
     border-radius: 12px;
     padding: 0px;
@@ -50,30 +52,6 @@
     position: relative;
 }
 
-/* #image::after {
-    height: 110px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid #fb0000;
-    position: absolute;
-} */
-
-/* .stylecolor {
-    height: 107px;
-    max-width: 300px;
-    height: 107px;
-    max-width: 300px;
-    min-width: 240px;
-    background-color: #605cb6;
-    margin-top: -23px;
-    border-radius: 12px;
-    border-top-right-radius: 12px;
-    border-top-left-radius: 12px;
-    border-bottom-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-    position: absolute;
-    display: none;
-} */
 
 #Viewbtn {
     padding: 10px;
@@ -108,8 +86,209 @@
 
 .imagebor {
     border: 4px solid #605cb6;
-    height: 107px;
+    height: 108px;
     border-radius: 50%;
     position: relative;
     margin-top: 35px;
+}
+
+/* styling html */
+#card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(36px, auto);
+    height: 100%;
+    background: #f5f5f5;
+    width: 62%;
+    padding: 39px 0px 40px 50px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 1px 2px 9px -7px
+}
+
+.input-cont {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    /* width: 70%; */
+    width: 56%;
+}
+.input-cont  label{
+    font-size: 13px;
+}
+.input-cont  input{
+    font-size: 12px;
+}
+
+.inp-color-width {
+    width: 100%;
+}
+
+.show-css-code {
+    position: relative;
+    top: 200px;
+}
+
+.show-css-code,
+.show-Html-code {
+    background-color: #ffffff;
+    /* box-shadow: 1px 3px 10px -8px; */
+    width: 45%;
+    border-radius: 12px;
+    height: auto;
+    margin: auto;
+    margin-top: -208px;
+    position: relative;
+    box-shadow: 0px 0px 14px -8px rgb(153, 153, 153);
+    padding: 20px
+}
+#copiedsucc,
+#Htmlcopiedsucced {
+    padding: 7px;
+    width: 136px;
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 16px;
+    border: 1px solid black;
+    /* background-color: black; */
+    background-color: #605cb6;
+    color: white;
+    cursor: pointer;
+    margin-top: 18px;
+    transition: 0.3s ease;
+}
+
+#copiedsucc:hover {
+    background-color: #ffffff;
+    color: black;
+}
+
+#Htmlcopiedsucced:hover {
+    background-color: #ffffff;
+    color: black;
+}
+
+/* gen code bytton */
+#genCode {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+  
+}
+
+#genCode Button {
+    /* min-width: 130px; */
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    overflow: hidden;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.5), 0 0px 16px 0 rgba(0, 0, 0, 0.1);
+    background-color: #00ba6c;
+    margin-bottom: 52px;
+}
+
+#genCode Button:hover {
+    border-radius: 5px;
+    padding-right: 24px;
+    padding-left: 8px;
+}
+
+#genCode Button:hover:after {
+    opacity: 1;
+    right: 10px;
+}
+
+#genCode Button:after {
+    content: "\00BB";
+    position: absolute;
+    opacity: 0;
+    font-size: 20px;
+    line-height: 40px;
+    top: 0;
+    right: -20px;
+    transition: 0.4s;
+}
+
+.all {
+    height: 0;
+}
+
+.all.active {
+    filter: blur(8px);
+    pointer-events: none;
+    user-select: none;
+    transition: 0.2s;
+    height: 80px;
+}
+
+#Code-Container {
+    /* visibility: hidden; */
+    display: none;
+    opacity: 0;
+    transition: 0.3s;
+    top: 130px;
+    position: relative;
+}
+
+#Code-Container.AfterClick {
+    /* visibility: visible; */
+    display: inline;
+    opacity: 2;
+    transition: 0.3s;
+
+}
+
+.CloseCode {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    top: -201px;
+    right: 24px;
+    font-size: 26px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.closeButton {
+    /* height: 38px;
+    width: 40px; */
+    /* background-color: white; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border-radius: 50%; */
+    position: fixed;
+}
+
+.containerrr {
+    display: none;
+}
+
+.closeBody {
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.1s;
+    top: 130px;
+}
+
+.closeBody.clsBodyClick {
+    visibility: visible;
+    opacity: 2;
+    transition: 0.2s;
+    height: 242vh;
+    margin-top: -1173px;
+    position:static;
+    /* background-color: red; */
+
 }

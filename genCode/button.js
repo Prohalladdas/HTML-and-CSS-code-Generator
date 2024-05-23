@@ -148,6 +148,10 @@ function popup(){
     bgBlur.classList.toggle('active')
     let CodeContainer = document.querySelector('#Code-Container')
     CodeContainer.classList.toggle('AfterClick')
+
+    // body click
+    let clsbody = document.querySelector('.closeBody')
+    clsbody.classList.toggle('clsBodyClick')
 }
 
 // hamburger
