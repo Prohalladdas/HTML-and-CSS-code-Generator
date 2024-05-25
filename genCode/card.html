@@ -278,6 +278,7 @@
         </header>
 
         <div id="Card">
+            <!-- user ke liye card edit karne ke liye input -->
             <div id="card-container">
                 <div class="input-cont">
                     <label for="boxTitle">Card Name</label>
@@ -301,7 +302,7 @@
                     <input type="color" id="bgColor" value="#ffffff" class="inp-color-width">
                 </div>
                 <div class="input-cont">
-                    <label for="fontColor">Card Title Font-color</label>
+                    <label for="fontColor">Card Name Font-color</label>
                     <input type="color" id="fontColor" value="#142468" class="inp-color-width">
                 </div>
                 <div class="input-cont">
@@ -423,7 +424,7 @@
 
 
             </div>
-
+            <!-- ye ek example profile-card ki tarah or direct js se link hai -->
             <div class="showCardContainer">
                 <div id="showCard" style=" margin-bottom: 35px;">
                     <div id="create-Card" class="ContainerCard">
@@ -435,42 +436,51 @@
                         <button id="Viewbtn">View Profile</button>
                     </div>
                 </div>
-                
+
+                <!-- ye code generate button -->
+                <!-- or BackGround blur Or Code Hide karne ke liye  -->
                 <div id="genCode">
                     <button onclick="popup()"> Generate Code</button>
                 </div>
             </div>
-            <!-- BackGround blur Or Code Hide karne ke liye  -->
-
         </div>
     </div>
-
+    <!-- card ki code yaha per store hoga -->
     <div id="Code-Container">
+        <!-- ye popup ya html ore css code ko close karne ke liye -->
         <div class="CloseCode">
             <div onclick="popup()" class="closeButton">✕</div>
         </div>
-        <!-- HTML code -->
-        <div class="show-Html-code" style="margin-bottom: 20px; margin-top: -113px;">
-            <div style="display: flex;justify-content: space-between;">
+        <div class="code-flex">
+            <!-- HTML code container-->
+            <div class="show-Html-code" style="margin-top: -113px;">
+                <div style="display: flex;justify-content: space-between;">
+                    <h4 style=" margin-bottom: 12px;">Your <span style="color: #5900ff; font-style: italic;">HTML</span>
+                        Code
+                    </h4>
+                    <!-- ye all html code copy button -->
+                    <button onclick="copyCodeHtml()" id="Htmlcopiedsucced" style="margin-top: 0;">Copy HTML
+                        Code</button>
+                </div>
+                <!-- html code yaha per store/show hota hai -->
+                <pre id="YourHtmlCode" style="overflow: auto;"></pre>
+            </div>
 
-                <h4 style=" margin-bottom: 12px;">Your <span style="color: #5900ff; font-style: italic;">HTML</span>
-                    Code
-                </h4>
-                <button onclick="copyCodeHtml()" id="Htmlcopiedsucced" style="margin-top: 0;">Copy HTML Code</button>
+            <!-- Css Code container-->
+            <div class="show-css-code">
+                <div style="display: flex;justify-content: space-between;">
+                    <h4 style=" margin-bottom: 12px;">Your <span style="color: #ff00aa; font-style: italic;">CSS</span>
+                        Code
+                    </h4>
+                    <!-- css code copy button -->
+                    <button onclick="copyCode()" id="copiedsucc" style="margin-top: 0;">Copy CSS Code</button>
+                </div>
+                <!-- yaha per css code store/show hota hai -->
+                <pre id="YourCssCode"></pre>
+
             </div>
-            <pre id="YourHtmlCode" style="overflow: auto;"></pre>
         </div>
-        <!-- Css Code -->
-        <div class="show-css-code">
-            <div style="display: flex;justify-content: space-between;">
-                <h4 style=" margin-bottom: 12px;">Your <span style="color: #ff00aa; font-style: italic;">CSS</span>
-                    Code
-                </h4>
-                <button onclick="copyCode()" id="copiedsucc" style="margin-top: 0;">Copy CSS Code</button>
-            </div>
-            <pre id="YourCssCode"></pre>
-            
-        </div>
+        <!-- ye close button ki tarah, jab code popup hota hai tab body mein kahin per click karne per code close hota hain  -->
         <div onclick="popup()" class="closeBody"></div>
     </div>
 

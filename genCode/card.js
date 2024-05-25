@@ -21,7 +21,6 @@ let imaBorderRadious = document.getElementById('imaBorderRadious')
 let photoBorder = document.getElementById('photoBorder')
 let photoBorderColor = document.getElementById('photoBorderColor')
 // Image back containerPsudoBg
-// let backstylecolor = document.getElementById('backstylecolor')
 let imageback2Border = document.getElementById('imageback2Border')
 let imageback2Bordercolor = document.getElementById('imageback2Bordercolor')
 // button
@@ -72,8 +71,7 @@ btnFontSizebox.addEventListener('input', generateCard)
 btnHoverColorbox.addEventListener('input', generateCard)
 btnHoverBgColorbox.addEventListener('input', generateCard)
 btnborderRadius.addEventListener('input', generateCard)
-// image back
-// backstylecolor.addEventListener('input', generateCard)
+// image bac
 imageback2Border.addEventListener('input', generateCard)
 imageback2Bordercolor.addEventListener('input', generateCard)
 // Psudo
@@ -108,7 +106,6 @@ function generateCard() {
     let borderRadiusimage = imaBorderRadious.value || '%';
     let photoBorderRadius = photoBorder.value
     let photoBorderRadiusColor = photoBorderColor.value
-    // let backstylecolor2 = backstylecolor.value
     let imageback2Border2 = imageback2Border.value
     let imageback2Bordercolor2 = imageback2Bordercolor.value
     // btn
@@ -179,12 +176,15 @@ function generateCard() {
             font-size: ${btnFontSizeboxItem}px;
             width: ${btnWidthboxItem}px;
             border-radius:${btnborderRadiusItem}px;
+            border:none;
         }
         #Viewbtn:hover{
             color: ${btnHoverColorItem};
             background-color: ${btnHoverBgColorItem};
+            transition: 0.3s;
         }
     }`
+    // Ye psudo selector styling le liye alag code likhna pada
     let psudoselector =
         `.ContainerCard::before {
         background-color: ${containerPsudoBgItem};
@@ -195,6 +195,7 @@ function generateCard() {
     }`
 
     document.head.appendChild(style);
+    // Ye psudo selector styling le liye alag code likhna pada
     let styleSheet = style.sheet;
     styleSheet.insertRule(psudoselector, styleSheet.psudoselectors);
 
@@ -244,7 +245,7 @@ function generateCard() {
                 font-size: ${btnFontSizeboxItem}px;
                 width: ${btnWidthboxItem}px;
                 border-radius:${btnborderRadiusItem}px;
-                border: 1px solid #ffffff;
+                border: none;
                 margin-bottom: 20px;
                 margin-top: 20px;
                 cursor:pointer;
@@ -252,6 +253,7 @@ function generateCard() {
             #Viewbtn:hover{
                 color: ${btnHoverColorItem};
                 background-color: ${btnHoverBgColorItem};
+                transition: 0.3s;
             }
     
             #create-Card.ContainerCard::before {
@@ -287,7 +289,9 @@ generateCard()
 //         copied.select();
 //         document.execCommand('copy');
 //     })
-// }
+// } 
+
+// Code copy 
 function copyCode() {
     let YourCssCode = document.getElementById('YourCssCode');
     let range = document.createRange();
@@ -325,26 +329,13 @@ copyCodeButton.addEventListener('click', function () {
 });
 
 // Popup, Isme Container ki class add karke then button per click karke  bg blur hoga css ki madad se or Undo hoga
-function popup(){
+function popup() {
     let bgBlur = document.querySelector('.all')
     bgBlur.classList.toggle('active')
     let CodeContainer = document.querySelector('#Code-Container')
     CodeContainer.classList.toggle('AfterClick')
-    
+
     let clsbody = document.querySelector('.closeBody')
     clsbody.classList.toggle('clsBodyClick')
-    
-}
 
-// hamburger
-window.onload = function  (){
-    const menu_btn = document.querySelector('.humbergar');
-    const mobile_menu = document.querySelector('#hamburger-click-containerrr');
-    const mobile_cont = document.querySelector('#click-cont');
-
-    menu_btn.addEventListener('click',function(){ // iss-active wohi per  hi hoga jahaper click event hoga matlab hamburger and content ki container
-        menu_btn.classList.toggle('iss-active');
-        mobile_menu.classList.toggle('iss-active');
-        mobile_cont.classList.toggle('iss-active');
-    })
 }
