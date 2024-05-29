@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Footer</title>
+    <link rel="stylesheet" href="./footer.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Teachers:ital,wght@0,400..800;1,400..800&display=swap');
 
@@ -251,30 +253,69 @@
                 font-size: 11px;
             }
         }
-   
     </style>
 </head>
 
 <body>
-    <header>
-        <div class="navber">
-            <img src="logo.png" alt="image">
-            <div class="hamburger" id="hamburger-click-containerrr">
-                <ul>
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./navber.html">Navber</a></li>
-                    <li><a href="./button.html">Button</a></li>
-                    <li><a href="./card.html">Card</a></li>
-                    <li><a href="./footer.html">Footer</a></li>
-                </ul>
+    <div class="all">
+        <header>
+            <div class="navber">
+                <img src="logo.png" alt="image">
+                <div class="hamburger" id="hamburger-click-containerrr">
+                    <ul>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./navber.html">Navber</a></li>
+                        <li><a href="./button.html">Button</a></li>
+                        <li><a href="./card.html">Card</a></li>
+                        <li><a href="./footer.html">Footer</a></li>
+                    </ul>
+                </div>
+                <div class="containerrr">
+                    <div class="humbergar">
+                        <div class="menu"></div>
+                    </div>
+                </div>
             </div>
-            <div class="containerrr">
-                <div class="humbergar">
-                    <div class="menu"></div>
+        </header>
+        <div style="width: 100%; display: flex; justify-content: center;">
+            <img src="footer1.png" alt="Firstfooter" id="Firstfooter" onclick="popup()">
+        </div>
+        <div style="width: 100%; display: flex; justify-content: center;">
+            <img src="footer2.png" alt="Secondfooter" id="Secondfooter" onclick="popup()">
+        </div>
+    </div>
+    <div onclick="popup()" class="closeBody"> </div>
+    <div class="CloseCode">
+        <div onclick="popup()" class="closeButton">✕</div>
+    </div>
+    <div id="FirstFooterContainer">
+        <div class="code">
+            <div class="flexCont">
+                <div class="headingCode">
+                    <div style="margin-top: 15px;display: flex;justify-content: space-between;">
+                        <h4 style="margin-left: 13px;">Your <span
+                                style="color: #5900ff; font-style: italic;">HTML</span>
+                            Code
+                        </h4>
+                        <button id="CopyCodeHtmlBtn" onclick="CopyHtmlCode()">Copy Code <i
+                                class='bx bx-copy-alt'></i></button>
+                    </div>
+                    <pre id="showHtmlContainer"></pre>
+                </div>
+                <div class="headingCode">
+                    <div style="margin-top: 15px;display: flex;justify-content: space-between;">
+                        <h4 style="margin-left: 13px;">Your <span style="color: #ff00aa; font-style: italic;">CSS</span>
+                            Code
+                        </h4>
+                        <button id="CopyCodeBtnCss" onclick="CopyCssCode()">Copy Code <i
+                                class='bx bx-copy-alt'></i></button>
+                    </div>
+                    <pre id="showCssContainer"></pre>
                 </div>
             </div>
         </div>
-    </header>
+    </div>
+
 
     <script>
         window.onload = function () {
@@ -297,6 +338,7 @@
             })
         }
     </script>
+    <script src="footer.js"></script>
 </body>
 
 </html>
