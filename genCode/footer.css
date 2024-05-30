@@ -149,3 +149,17 @@
     object-fit: cover;
     cursor: pointer;
 }
+#Thirdfooter {
+    height: 213px;
+    width: 800px;
+    margin-top: 50px;
+    object-fit: cover;
+    cursor: pointer;
+}
+#Fourthfooter{
+    height: 270px;
+    width: 800px;
+    margin-top: 50px;
+    object-fit: cover;
+    cursor: pointer;
+}
