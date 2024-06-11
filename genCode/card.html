@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Card</title>
     <link rel="stylesheet" href="./card.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Teachers:ital,wght@0,400..800;1,400..800&display=swap');
 
@@ -283,8 +284,18 @@
                     <!-- <button onclick="popup()"> Generate Code</button> -->
                     <img src="card1.png" alt="firstCard" id="firstCard" onclick="popup()">
                 </div>
+                <div id="genCode">
+                    <img src="card 2.png" alt="SecondCard" id="SecondCard" onclick="popup()">
+                </div>
+                <div id="genCode">
+                    <img src="card3.png" alt="thirdCard" id="thirdCard" onclick="popup()">
+                </div>
+                <div id="genCode" style="height: 244px;">
+                    <img src="card4.png" alt="FourthCard" id="FourthCard" onclick="popup()">
+                </div>
             </div>
         </div>
+    </div>
     </div>
     <!-- card ki code yaha per store hoga -->
     <div id="Code-Container">
@@ -300,10 +311,11 @@
                         Code
                     </h4>
                     <!-- ye all html code copy button -->
-                    <button onclick="copyCodeHtml()" id="Htmlcopiedsucced" style="margin-top: 0;">Copy Code</button>
+                    <button onclick="copyCodeHtml()" id="Htmlcopiedsucced" style="margin-top: 0;">Copy Code <i
+                            class='bx bx-copy-alt'></i></button>
                 </div>
                 <!-- html code yaha per store/show hota hai -->
-                <pre id="YourHtmlCode" style="overflow: auto;"></pre>
+                <pre id="YourHtmlCode" style="    overflow-x: scroll; overflow-y: scroll; height: 142px;"></pre>
             </div>
 
             <!-- Css Code container-->
@@ -313,7 +325,8 @@
                         Code
                     </h4>
                     <!-- css code copy button -->
-                    <button onclick="copyCode()" id="copiedsucc" style="margin-top: 0;">Copy Code</button>
+                    <button onclick="copyCode()" id="copiedsucc" style="margin-top: 0;">Copy Code <i
+                            class='bx bx-copy-alt'></i></button>
                 </div>
                 <!-- yaha per css code store/show hota hai -->
                 <pre id="YourCssCode"></pre>

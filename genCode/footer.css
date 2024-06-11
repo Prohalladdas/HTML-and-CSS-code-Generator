@@ -94,12 +94,12 @@
     visibility: visible;
     opacity: 2;
     transition: 0.2s;
-    height: 125vh;
+    height: 140vh;
     top: 0;
     width: 100%;
     margin-top: -212px;
     /* background-color: rgba(255, 0, 0, 0.301); */
-    position: relative;
+    position: fixed;
 }
 
 #FirstFooterContainer {
