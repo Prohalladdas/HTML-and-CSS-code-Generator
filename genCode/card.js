@@ -457,3 +457,166 @@ FourthCard.addEventListener('click', function () {
     showCssContainer.innerText = cssCode;
 
 })
+//+++++++++++++++++++++++++++++++++
+//Fifth Card add
+let FifthCard = document.getElementById('FifthCard')
+FifthCard.addEventListener('click', function () {
+    let showHtmlContainer = document.getElementById('YourHtmlCode')
+    let showhtml = `  <div class="container">
+        <div class="first"></div>
+        <div class="second">
+            <img src="https://i.pinimg.com/originals/a0/30/c2/a030c23a4f96d117bc266ec8a922101b.jpg" alt="image">
+            <div class="details">
+                <h2>Tanjiro Kamado</h2>
+                <p><span>Email: </span> demonslayer@gmail.com</p>
+                <p><span>Location: </span> Shibuya City, Japan</p>
+                <p><span>Occupation: </span>Samurai</p>
+                <p><span>Contact No: </span> +80 12345678</p>
+            </div>
+        </div>
+    </div>`
+
+    showHtmlContainer.innerText = showhtml;
+
+    let showCssContainer = document.getElementById('YourCssCode')
+    let cssCode = `   @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            font-family: "Noto Sans", sans-serif;
+        }
+
+        .container {
+            height: 200px;
+            width: 444px;
+            background-color: rgb(255 255 255);
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            box-shadow: 4px 5px 38px -15px gray;
+        }
+
+
+        .first {
+            width: 68px;
+            height: 0px;
+            border-right: 67px solid #ed727200;
+            border-top: 200px solid #1a2e3b;
+
+        }
+
+        .second {
+            position: absolute;
+            margin-left: 40px;
+            display: flex;
+            align-items: center;
+            height: 200px;
+        }
+
+        .second img {
+            height: 125px;
+            border-radius: 50%;
+            width: 125px;
+            object-fit: cover;
+        }
+
+        .details {
+            height: 200px;
+            padding: 20px;
+            width: auto;
+        }
+
+        span {
+            font-weight: 600;
+        }`
+    showCssContainer.innerText = cssCode;
+
+})
+//+++++++++++++++++++++++++++++++++
+//Sixth Card add
+let sixthCard = document.getElementById('sixthCard')
+sixthCard.addEventListener('click', function () {
+    let showHtmlContainer = document.getElementById('YourHtmlCode')
+    let showhtml = ` <div class="container">
+        <div class="tickCont">
+            <div class="tick"></div>
+        </div>
+        <div class="logo"><img src="card6logo.png" alt=""></div>
+        <h4 style="margin-top: -11px;font-size: 17px;">Lorem ipsum</h4>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime iure illo impedit velit. Necessitatibus vel
+            hic nobis, accusamus soluta adipisci.</p>
+        <div class="btn">
+            <button>Read more</button>
+        </div>
+    </div>`
+
+    showHtmlContainer.innerText = showhtml;
+
+    let showCssContainer = document.getElementById('YourCssCode')
+    let cssCode = `  * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 230px;
+            height: 342px;
+            border-radius: 12px;
+            background-color: rgb(247, 247, 247);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 17px;
+        }
+
+        .container p {
+            font-size: 12px;
+            width: 78%;
+            text-align: center;
+            color: #474747;
+        }
+
+        .tickCont {
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: end;
+        }
+
+        .tick {
+            height: 11px;
+            width: 42px;
+            background-color: #ff3078;
+            position: relative;
+            top: 20px;
+        }
+
+        .logo img {
+            height: 110px;
+        }
+
+        button {
+            padding: 9px;
+            width: 114px;
+            background-color: #ff3078;
+            border: none;
+            color: #ffffff;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .btn {
+            padding: 2px;
+            border: 1px solid #ff3078;
+        }
+
+        button:hover {
+            background-color: #fa1a69;
+            color: #ffffff;
+        }`
+    showCssContainer.innerText = cssCode;
+
+})
